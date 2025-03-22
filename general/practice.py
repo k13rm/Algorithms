@@ -5,10 +5,44 @@ Homework:
 1. count how many duplicates there are in the list
 2. find all duplicates and how many times each number is duplicated
 """
+count = 0
+
+#1:
+for i in range(len(lst)):
+    for j in range(i + 1, len(lst)):
+        if lst[i] == lst[j]:
+            print("yes")
+#2:
+duplicates = 0
+for i in range(len(lst)):
+    for j in range(i + 1, len(lst)):
+        if lst[i] == lst[j]:
+            duplicates += 1
+print(duplicates)
 
 
+# (key, value) pairs
+# 
 
-lst2 = lst[2:6] # [7, 17, 28, 18]
+mydictionary = {
+    "Mert": "The elegant Universe",
+}
+
+mydictionary["Ekin"] = "The essence of Calculus"
+mydictionary["Volkan"] = ["The art programming", "Leaders of Tomorrow"]
+mydictionary["Ekin"] = "The story of the three little pigs"
+
+print("Mert's favorite book is", mydictionary["Mert"])
+
+if "Selim" in mydictionary:
+    print("Selim's favorite book is", mydictionary["Selim"])
+else:
+    print("Selim is not in the dictionary")
+
+
+#if storage[1] == storage[len]
+
+# lst2 = lst[2:6] # [7, 17, 28, 18]
 
 # x = 4
 # if x in lst:
@@ -33,16 +67,16 @@ lst2 = lst[2:6] # [7, 17, 28, 18]
 # if flag == False:
 #     print("no")
 
-for i in range(len(lst)):
-    for j in range(i + 1, len(lst)):
-        if lst[i] == lst[j]:
-            print("yes")
+# for i in range(len(lst)):
+#     for j in range(i + 1, len(lst)):
+#         if lst[i] == lst[j]:
+#             print("yes")
 
 
-# solution using slicing
-for i in range(len(lst)):
-    if lst[i] in lst[i+1:]:
-        print("yes")
+# # solution using slicing
+# for i in range(len(lst)):
+#     if lst[i] in lst[i+1:]:
+#         print("yes")
 
 
 # range(x, y): x -> y - 1
@@ -65,17 +99,17 @@ for i in range(len(lst)):
 # print(sum)
 
 # print(sum(lst))
-"""
-greatest = 0
-for x in lst:
-    if greatest < x:
-        greatest = x
-least = greatest
-for x in lst:
-    if least > x:
-        least = x
-print(least)
-"""
+# """
+# greatest = 0
+# for x in lst:
+#     if greatest < x:
+#         greatest = x
+# least = greatest
+# for x in lst:
+#     if least > x:
+#         least = x
+# print(least)
+# """
 
 # least = 100
 # for x in lst:

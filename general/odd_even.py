@@ -137,18 +137,54 @@ NOTE: if the the number doesn't have an upper bound or lower bound, just say the
 
 lst = [3, 5, 1, 4, 8, 2, 9, 11, 23, 22] # sort the numbers: [1, 2, 3, 4, 5, 8, 9, 11, 22, 23]
 
+# lb = 5
+# ub = 8
+
 # lst1 = [1,2,3,4,5]
 # lst2 = [8,9,11,22,23]
 
-target = 7
-ub_target = 
-lb_target = 
+target = int(input("Enter a target number: "))
+request = input("Is the target number odd or even? ")
+ub = 9999999
+lb = -1
 
-# |-23| = +23
-# |23| = +23
+# conditions for a number to be an upper bound:
+# 1. the number must be greater than the target
+# 2. the number must be the smallest number among those greater than the target
 
-# y1 = 5, x = 4
-# y2 = 1, x = 4
-# y1 - x = 5 - 4 = |1| = 1
-# y2 - x = 1 - 4 = |-3| = 3
+# conditions for a number to be an lower bound:
+# 1. the number must be smaller than the target
+# 2. the number must be the largest number among those smaller than the target
+
+# request == "even"
+# request == "odd"
+
+for num in lst:
+    if request == "even" and num % 2 != 0:
+        continue
+    if request == "odd" and num % 2 == 0:
+        continue
+    
+    if num < target and num > lb:
+        lb = num 
+        
+    if num > target and num < ub:
+        ub = num
+    
+if ub == 9999999:
+    print("The upperbound of the number you have selected doesn't exist inside of this list")
+else:
+    print("The upperbound of", target, "in this list is:", ub)
+
+if lb == -1:
+    print("The lowerbound of the number you have selected doesn't exist inside of this list")
+else:
+    print("The lowerbound of", target, "in this list is:", lb)
+    
+print("The target is:", target)
+
+
+
+
+
 

@@ -148,6 +148,7 @@ request = input("Is the target number odd or even? ")
 ub = 9999999
 lb = -1
 
+
 # conditions for a number to be an upper bound:
 # 1. the number must be greater than the target
 # 2. the number must be the smallest number among those greater than the target
@@ -182,6 +183,15 @@ else:
     print("The lowerbound of", target, "in this list is:", lb)
     
 print("The target is:", target)
+
+
+
+
+
+
+
+
+
 
 
 

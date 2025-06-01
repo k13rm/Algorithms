@@ -99,3 +99,15 @@ F: 0 - 59
 
 
 
+print("Put your grade in for your class, the grade scale will determine wether you've gotten an A or B and etc.")
+grade = int(input("Enter grade here (ex: 90 or 76):"))
+if grade >= 89:
+    print("You got an 'A'")
+if grade <= 90 and >= 79:
+    print("You got a 'B'")
+if grade <= 80  and >= 69:
+    print("You got a 'C'")
+if grade <= 70 and >= 59:
+    print("You got a 'D'")
+if grade <= 60 and >= 0:
+    print("You got a 'F'")

@@ -161,3 +161,20 @@ For example, if Jonathan scores 55 and Rick scores 90, they will both still go, 
 and then first you need to tell them if they will go on the trip or not, and then you need to tell them if they will get ice cream or not. If someone will pay fine you should print a message specifying that.`
 
 """
+
+Jscore = 0
+Rscore = 0
+
+Jscore = int(input("How much did Jonathan score? \ntype here:"))
+Rscore = int(input("How much did Rick score? \ntype here:"))
+
+if Jscore > 69 and Rscore > 69:
+   print("They will go on a trip")
+if Jscore > 69 and Rscore < 70:
+   print("Jonathan will go on a trip, Rick still can go but has to pay.")
+if Jscore < 70 and Rscore > 69:
+   print("Rick will go on a trip, Jonathan still can go but has to pay.")   
+if Jscore < 70 and Rscore < 70:   
+   print("They both failed the exam but they can still pay to go on a trip.")
+else:
+   print("Error, calculate again.")

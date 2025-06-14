@@ -162,19 +162,128 @@ and then first you need to tell them if they will go on the trip or not, and the
 
 """
 
-Jscore = 0
-Rscore = 0
+# Jscore = 0
+# Rscore = 0
 
-Jscore = int(input("How much did Jonathan score? \ntype here:"))
-Rscore = int(input("How much did Rick score? \ntype here:"))
+# Jscore = int(input("How much did Jonathan score? \ntype here:"))
+# Rscore = int(input("How much did Rick score? \ntype here:"))
 
-if Jscore > 69 and Rscore > 69:
-   print("They will go on a trip")
-if Jscore > 69 and Rscore < 70:
-   print("Jonathan will go on a trip, Rick still can go but has to pay.")
-if Jscore < 70 and Rscore > 69:
-   print("Rick will go on a trip, Jonathan still can go but has to pay.")   
-if Jscore < 70 and Rscore < 70:   
-   print("They both failed the exam but they can still pay to go on a trip.")
-else:
-   print("Error, calculate again.")
+
+# Rick      : 59 - 80 - 58
+# Jonathan  : 59 - 80 - 82
+
+# if (Jscore + Rscore) / 2 > 69:
+#     print("They will go on a trip")
+#     if Jscore < 60:
+#         print("Jonathan will have to pay a fine for scoring below 60.")
+#     if Rscore < 60:
+#         print("Rick will have to pay a fine for scoring below 60.")
+# else:
+#     print("They both failed the exam so they won't be able to go on a trip.")
+
+
+# average_score = (Jscore + Rscore) / 2
+# if average_score > 69:
+#     print("They will go on a trip.")
+# if average_score > 69 and Jscore < 60:
+#     print("Jonathan will go on a trip, but he has to pay a fine.")
+# if average_score > 69 and Rscore < 60:
+#     print("Rick will go on a trip, but he has to pay a fine.")
+# if average_score < 70:
+#     print("They both failed the exam so they won't be able to go on a trip.")
+
+
+# if Jscore > 69 and Rscore < 60:
+#    print("Jonathan will go on a trip, Rick can still go but has to pay.")
+# if Jscore < 60 and Rscore > 69:
+#    print("Rick will go on a trip, Jonathan can still go but has to pay.")   
+# if Jscore < 60 and Rscore < 60:   
+#    print("They both failed the exam but they can still pay to go on a trip.")
+
+
+"""
+Problem: You are the owner of a sweets shop. You have a list of sweets, and you want to give a discount to the customers who buy more than 5 sweets. You have 3 types of sweets: chocolate, vanilla, and strawberry.
+You only apply the discount if the customer buys from the same type of sweets. However, for strawberry, you also give an additional discount if the customer buys more than 10 sweets.
+
+You will ask the user how many of each type of sweets they want to buy, and then you will tell them how many discounts they will get.
+
+Let's say that you get 1 discount for every 5 chocolates, 1 discount for every 5 vanillas, and 1 discount for every 8 strawberries.
+
+Example: 
+5 chocolate, 3 vanilla, 5 strawberry: 1 discount
+10 chocolate, 10 vanilla, 5 strawberry: 4 discounts
+10 chocolate, 10 vanilla, 10 strawberry: 5 discounts
+
+NOTE: each person cannot buy more than 30 of the same of type
+"""
+
+
+Discounts = 0
+
+chocolate = int(input("How many Chocolates did you buy? \ntype here:"))
+Strawberry = int(input("How many Strawberry flavored candies did you buy? \ntype here:"))
+Vanilla = int(input("How many Vanilla flavored candies did you buy? \ntype here:"))
+
+#Chocolate
+
+if chocolate >=5:
+ Discounts += 1
+if chocolate >=10:
+ Discounts += 1
+if chocolate >=15:
+ Discounts += 1
+if chocolate >=20:
+ Discounts += 1
+if chocolate >=25:
+ Discounts += 1
+if chocolate == 30:
+ Discounts += 1
+
+#Vanilla
+
+if Vanilla >=5:
+ Discounts += 1
+if Vanilla >=10:
+ Discounts += 1
+if Vanilla >=15:
+ Discounts += 1
+if Vanilla >=20:
+ Discounts += 1
+if Vanilla >=25:
+ Discounts += 1
+if Vanilla == 30:
+ Discounts += 1
+
+#Strawberry
+
+if Strawberry >=8:
+ Discounts += 1
+if Strawberry >=16:
+ Discounts += 1
+if Strawberry >= 24:
+ Discounts += 1
+
+
+
+# if chocolate >= 5 :
+#   Discounts += 1
+# if Strawberry >= 5 and Strawberry < 10:
+#   Discounts += 1
+# if Strawberry >= 10:
+#   Discounts += 2
+# if Vanilla >= 5 :
+#   Discounts += 1
+
+
+
+print("You have gotten", Discounts, "amount(s) of discount(s).")
+
+# 32 / 5 = 6.8
+
+x = 30 / 5
+print(x)
+#normal division
+
+x = 32 // 5
+print(x)
+#rounding down

@@ -218,50 +218,51 @@ NOTE: each person cannot buy more than 30 of the same of type
 """
 
 
-Discounts = 0
+# Discounts = 0
 
-chocolate = int(input("How many Chocolates did you buy? \ntype here:"))
-Strawberry = int(input("How many Strawberry flavored candies did you buy? \ntype here:"))
-Vanilla = int(input("How many Vanilla flavored candies did you buy? \ntype here:"))
+# chocolate = int(input("How many Chocolates did you buy? \ntype here:"))
+# Strawberry = int(input("How many Strawberry flavored candies did you buy? \ntype here:"))
+# Vanilla = int(input("How many Vanilla flavored candies did you buy? \ntype here:"))
 
-#Chocolate
 
-if chocolate >=5:
- Discounts += 1
-if chocolate >=10:
- Discounts += 1
-if chocolate >=15:
- Discounts += 1
-if chocolate >=20:
- Discounts += 1
-if chocolate >=25:
- Discounts += 1
-if chocolate == 30:
- Discounts += 1
+# #Chocolate
 
-#Vanilla
+# if chocolate >=5:
+#  Discounts += 1
+# if chocolate >=10:
+#  Discounts += 1
+# if chocolate >=15:
+#  Discounts += 1
+# if chocolate >=20:
+#  Discounts += 1
+# if chocolate >=25:
+#  Discounts += 1
+# if chocolate == 30:
+#  Discounts += 1
 
-if Vanilla >=5:
- Discounts += 1
-if Vanilla >=10:
- Discounts += 1
-if Vanilla >=15:
- Discounts += 1
-if Vanilla >=20:
- Discounts += 1
-if Vanilla >=25:
- Discounts += 1
-if Vanilla == 30:
- Discounts += 1
+# #Vanilla
 
-#Strawberry
+# if Vanilla >=5:
+#  Discounts += 1
+# if Vanilla >=10:
+#  Discounts += 1
+# if Vanilla >=15:
+#  Discounts += 1
+# if Vanilla >=20:
+#  Discounts += 1
+# if Vanilla >=25:
+#  Discounts += 1
+# if Vanilla == 30:
+#  Discounts += 1
 
-if Strawberry >=8:
- Discounts += 1
-if Strawberry >=16:
- Discounts += 1
-if Strawberry >= 24:
- Discounts += 1
+# #Strawberry
+
+# if Strawberry >=8:
+#  Discounts += 1
+# if Strawberry >=16:
+#  Discounts += 1
+# if Strawberry >= 24:
+#  Discounts += 1
 
 
 
@@ -276,14 +277,73 @@ if Strawberry >= 24:
 
 
 
-print("You have gotten", Discounts, "amount(s) of discount(s).")
+# print("You have gotten", Discounts, "amount(s) of discount(s).")
 
 # 32 / 5 = 6.8
 
-x = 30 / 5
-print(x)
-#normal division
+# x = 35 / 5
+# print(x)
+# #normal division
 
-x = 32 // 5
-print(x)
+# x = 34 // 5
+# print(x)
+
 #rounding down
+
+x = int(input("How much chocolate did you get?\nType here:"))
+y = int(input("How much vanilla sweets did you get?\nType here:"))
+z = int(input("How much strawberry sweets did you get?\nType here:")) # how many strawberries 
+
+chocolate_answer = x // 5
+vanilla_answer = y // 5
+strawberry_answer = z // 8
+
+
+discount_count = chocolate_answer + vanilla_answer + strawberry_answer
+
+print("You got",chocolate_answer + vanilla_answer + strawberry_answer, "discounts from the sweets you bought.")
+
+"""
+Let's say now that we have the following prices:
+
+- Chocolate: 3 dollars
+- Vanilla: 2 dollars
+- Strawberry: 4 dollars
+
+Every discount is 1 dollar
+"""
+
+chocolate_price = x*3 # 45
+vanilla_price = y*2 # 60
+strawberry_price = z*4 # 64
+
+price_count = chocolate_price + strawberry_price + vanilla_price
+discounted_price = price_count - discount_count
+
+
+if price_count > 100:
+    final_price = discounted_price - 5
+else:
+    final_price = discounted_price
+
+saved_money = price_count - final_price
+
+
+
+
+print("The total amount of sweets you bought are equal to", price_count,"$")
+print("Every discount is 1$ so you only have to  pay", final_price,"$")
+print("By these discounts you saved", saved_money,"$")
+print("Note: you save 5$ if you spend more than a 100$")
+
+
+"""
+Homework: 
+1) Let's say we add we a new type of sweet, which is pistachio
+Its price is 8 dollars, and you get 1 discount for every 10 pistachios.
+
+
+2) add a new type of sweets
+
+3) and new discount type
+"""

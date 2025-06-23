@@ -293,15 +293,19 @@ NOTE: each person cannot buy more than 30 of the same of type
 x = int(input("How much chocolate did you get?\nType here:"))
 y = int(input("How much vanilla sweets did you get?\nType here:"))
 z = int(input("How much strawberry sweets did you get?\nType here:")) # how many strawberries 
+e = int(input("How much pistachio sweets did you get?\nType here:"))
+f = int(input("How much mints did you get?\nType here:"))
 
 chocolate_answer = x // 5
 vanilla_answer = y // 5
 strawberry_answer = z // 8
+pistachio_answer = e // 10
+mint_answer = f // 6
 
 
-discount_count = chocolate_answer + vanilla_answer + strawberry_answer
+discount_count = chocolate_answer + vanilla_answer + strawberry_answer + pistachio_answer + mint_answer
 
-print("You got",chocolate_answer + vanilla_answer + strawberry_answer, "discounts from the sweets you bought.")
+print("You got",chocolate_answer + vanilla_answer + strawberry_answer + pistachio_answer + mint_answer, "discounts from the sweets you bought.")
 
 """
 Let's say now that we have the following prices:
@@ -309,6 +313,7 @@ Let's say now that we have the following prices:
 - Chocolate: 3 dollars
 - Vanilla: 2 dollars
 - Strawberry: 4 dollars
+- Pistachio 8 dollars
 
 Every discount is 1 dollar
 """
@@ -316,10 +321,16 @@ Every discount is 1 dollar
 chocolate_price = x*3 # 45
 vanilla_price = y*2 # 60
 strawberry_price = z*4 # 64
+pistachio_price = e*8
+mint_price = f*2
 
-price_count = chocolate_price + strawberry_price + vanilla_price
+price_count = chocolate_price + strawberry_price + vanilla_price + pistachio_price + mint_price
 discounted_price = price_count - discount_count
 
+if mint_price >= 20:
+    mint_special = discounted_price -3
+else:
+    mint_special = discounted_price
 
 if price_count > 100:
     final_price = discounted_price - 5
@@ -342,8 +353,14 @@ Homework:
 1) Let's say we add we a new type of sweet, which is pistachio
 Its price is 8 dollars, and you get 1 discount for every 10 pistachios.
 
+Done
+
 
 2) add a new type of sweets
 
+done (mint)
+
 3) and new discount type
+
+#if you get more than 20 dollars worth of mints you get a 3 dollar discount
 """

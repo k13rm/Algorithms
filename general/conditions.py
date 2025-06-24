@@ -328,9 +328,7 @@ price_count = chocolate_price + strawberry_price + vanilla_price + pistachio_pri
 discounted_price = price_count - discount_count
 
 if mint_price >= 20:
-    mint_special = discounted_price -3
-else:
-    mint_special = discounted_price
+    discounted_price = discounted_price - 3
 
 if price_count > 100:
     final_price = discounted_price - 5
@@ -364,3 +362,5 @@ done (mint)
 
 #if you get more than 20 dollars worth of mints you get a 3 dollar discount
 """
+
+

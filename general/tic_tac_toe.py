@@ -35,6 +35,9 @@ for i in range(3): # rows
         row_buttons.append(button)
     all_buttons.append(row_buttons)
 
+def is_winnder(current_player):
+    pass
+
 def button_click(row, col, button):
     
     global current_player

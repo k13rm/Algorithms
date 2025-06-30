@@ -18,18 +18,24 @@ board = [
     ['-', '-', '-'], 
     ['-', '-', '-']
 ]
-
+message_xscore = tk.Label(root, text = f"", font=('Arial', 16))
+message_xscore.grid(row=5, column=0, columnspan=1)
+message_oscore = tk.Label(root, text = f"", font=('Arial', 16))
+message_oscore.grid(row=5, column=2, columnspan=1)
 message_label = tk.Label(root, text=f"", font=('Arial', 16))
 message_label.grid(row=3, column=0, columnspan=3)
 
 current_player = "X"
-message_label.config(text=f"Player X's turn")
+message_label.config(text="Player X's turn ")
+player_x_score = 0
+player_o_score = 0
+
 
 all_buttons = []
 for i in range(3): # rows
     row_buttons = []
     for j in range(3): # column
-        button = tk.Button(root, text='-', width=5, height=2, font=('Arial', 24))
+        button = tk.Button(root, text='-', width=5, height=2, font=('Arial', 24), fg="maroon", highlightbackground="linen", bg="red")
         # this makes sure when the button is clicked, it calls the button_click function with the correct row, column, and button
         button.config(command=lambda r=i, c=j, b=button: button_click(r, c, b))
         
@@ -82,7 +88,7 @@ def is_winner(current_player): # either X or O
 
 def button_click(row, col, button):
     
-    global current_player
+    global current_player, board, player_x_score, player_o_score
 
     if board[row][col] == '-':
         if current_player == "X":
@@ -91,6 +97,10 @@ def button_click(row, col, button):
 
             if is_winner("X"):
                 message_label.config(text="Player X wins!")
+                disable_buttons()
+                player_x_score += 1
+                message_xscore.config(text=f"Player X Score: {player_x_score}" )
+                message_oscore.config(text=f"Player O Score: {player_o_score}")
                 return
 
             current_player = "O"
@@ -100,11 +110,28 @@ def button_click(row, col, button):
             button.config(text="O")
             if is_winner("O"):
                 message_label.config(text="Player O wins!")
+                disable_buttons()
+                player_o_score += 1
+                message_xscore.config(text=f"Player X Score: {player_x_score}" )
+                message_oscore.config(text=f"Player O Score: {player_o_score}")
                 return
             
             current_player = "X"
             message_label.config(text="Player X's turn")
 
+
+
+    
+
+
+    if is_draw():
+        message_label.config(text="It's a draw, no one won")
+        disable_buttons()
+        player_x_score += 1
+        player_o_score += 1
+        message_xscore.config(text=f"Player X Score: {player_x_score}" )
+        message_oscore.config(text=f"Player O Score: {player_o_score}")
+        
 
 reset_button = tk.Button(root, text="Reset", width=10, height=2, font=('Arial', 16))
 reset_button.grid(row=4, column=0, columnspan=3)
@@ -118,6 +145,21 @@ def reset_board():
     for i in range(3):
         for j in range(3):
             board[i][j] = '-'
-            all_buttons[i][j].config(text='-')
+            all_buttons[i][j].config(text='-', state="normal")
+
+
+def disable_buttons():
+    for i in range(3):
+        for j in range(3):
+            all_buttons[i][j].config(state="disabled")
+
+
+def is_draw():
+    for i in range(3):
+        for j in range(3):
+            if board[i][j] == '-':
+                return False
+    
+    return True
 
 root.mainloop()

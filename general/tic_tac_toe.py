@@ -45,6 +45,7 @@ for i in range(3): # rows
         row_buttons.append(button)
     all_buttons.append(row_buttons)
 
+BOARD_SIZE = 6
 def is_winner(current_player): # either X or O
     
     # for i in range(3):

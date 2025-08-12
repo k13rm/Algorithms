@@ -22,6 +22,8 @@ board[0][6] = "X"
 
 # Goal (1): given the current player as input, return True, if all the numbers in row 0 are equal to the current player, otherwise, return False.
 
+# Goal (2): given the current player as input, return True if all the numbers in at least one of rows is equal to the current player, otherwise, return False.
+
 def is_winner(current_player):
 
     for j in range(BOARD_SIZE):

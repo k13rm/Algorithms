@@ -35,7 +35,7 @@ all_buttons = []
 for i in range(3): # rows
     row_buttons = []
     for j in range(3): # column
-        button = tk.Button(root, text='-', width=5, height=2, font=('Arial', 24), fg="maroon", highlightbackground="linen", bg="red")
+        button = tk.Button(root, text='-', width=5, height=2, font=('Arial', 24), fg="black", highlightbackground="linen", bg="red")
         # this makes sure when the button is clicked, it calls the button_click function with the correct row, column, and button
         button.config(command=lambda r=i, c=j, b=button: button_click(r, c, b))
         

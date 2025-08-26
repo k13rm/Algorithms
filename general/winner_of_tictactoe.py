@@ -57,6 +57,22 @@ def is_winner2(current_player):
     
     return False
 
+def is_winner2(current_player):
+    
+    for k in range (BOARD_SIZE): # number of columns
+        
+        
+        flag = True
+        for l in range(BOARD_SIZE): # number of columns
+            if board[k][l] != current_player:
+                flag = False
+                break
+        if flag == True: 
+            
+            return True
+    
+    return False
+
 
     
 

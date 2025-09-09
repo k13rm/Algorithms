@@ -2,7 +2,7 @@ BOARD_SIZE = 7
 
 board = [['-' for _ in range(BOARD_SIZE)] for _ in range(BOARD_SIZE)]
 
-# [['X', 'X', '-', 'X', 'X']
+# [['X', 'X', 'X', 'X', 'X']
 #  ['-', '-', '-', '-', '-']
 #  ['-', '-', '-', '-', '-']
 #  ['-', '-', '-', '-', '-']
@@ -14,7 +14,7 @@ board[4][2] = "X"
 board[3][3] = "X"
 board[2][4] = "X"
 board[1][5] = "X"
-board[0][6] = "O"
+board[0][6] = "X"
 
 
 # [(0,0), (0,1), (0,2), (0,3), (0,4)],
@@ -45,54 +45,37 @@ def is_winner(current_player):
 
 
 def is_winner2(current_player):
+    
     # The Flag Trick
+    false2 = 0
     for j in range (BOARD_SIZE): # number of rows
         
-        # let's now check if row j has all the elements equal to current_player
-        flag = True
+        false1 = 0
         for i in range(BOARD_SIZE): # number of columns
+            
+            # check the row
             if board[j][i] != current_player:
-                flag = False
-                break
-        if flag == True: 
-            # this means that row j has all the elements equal to current_player
-            return True
+                false1 += 1
             
-   
-    for k in range (BOARD_SIZE): # number of columns
-        
-        flag = True
-        for l in range(BOARD_SIZE): # number of rows
-            if board[l][k] != current_player:
-                flag = False
-                break
-        if flag == True: 
+            # check the column
+            if board[i][j] != current_player:
+                false1 += 1
             
-            return True
-    
-    flag = True
-    for k in range(BOARD_SIZE):
+            if false1 == 2:
+                break
 
-        if board[k][k] != current_player:
-            flag = False
-            break
-        
-    if flag == True:
+            if false1 < 2: 
+                return True
+
+        if board[j][j] != current_player:
+                false2 += 1
+            
+        if board[BOARD_SIZE - 1 - j][j] != current_player:
+                false2 += 1
+
+    if false2 < 2: 
         return True
-    
-    flag = True    
-    for r in range(BOARD_SIZE):
-
-        col = r
-        row = BOARD_SIZE - 1 - r
-
-        if board[BOARD_SIZE - 1 - r][r] != current_player:
-            flag = False
-            break
-
-    if flag == True:
-        return True
-    
+            
     
     return False
 

@@ -54,23 +54,66 @@ num = 20
 # *********
 # ********** 10 lines
 
-floors = 1000
+# floors = 10
 
-for k in range(floors):
-    for j in range(0, k):
-      print("*", end="")
-    print("\n")
+# for k in range(floors):
+#     for j in range(0, k):
+#       print("*", end="")
+#     print("")
 
 # print a christmas tree way:
-#          *
-#         ***
-#        *****
-#       *******
-#      *********
-#     ***********
+# 10 levels:
+#          * # k=0 : 10 space, 1 asteriks 
+#         *** # k=1: 9 space, 3 asteriks
+#        ***** # k=2: 8 space, 5 asteriks
+#       ******* # k=3: 7 space, 7 asteriks
+#      ********* # k=4: 6 space, 9 asteriks
+#     *********** # k=5: 5 space, 11 asteriks
 #    *************
 #   ***************
 #  *****************
 # *******************
+# number of spaces = levels - k
+ = 10 - 6 = 4
+# 5 levels:
+#     *, k=0, 5 space, 1 asteriks
+#    *** , k=1, 4 space, 3 asteriks
+#   ***** , k=2, 3 space, 5 asteriks
+#  *******
+# *********
+
+
+# k = 0, * = 1
+# k = 1, * = 3
+# k = 2, * = 5
+# k = 3, * = 7
+# k = 4, * = 9
+# k = 5, * = 11
+# k = 6, * = 13
+# k = 7, * = 15
+
+
+# number of asteriks = 
 
 levels = 10
+
+for k in range(levels):
+
+  for s in range(levels - k):
+    print(" ", end="")
+
+  for j in range():
+    print("*", end= "")
+    
+dkd="
+
+#$$$$$$$$$$*
+#$$$$$$$$$***
+#$$$$$$$$*****
+#$$$$$$$*******
+#$$$$$$*********
+#$$$$$***********
+#$$$$*************
+#$$$***************
+#$$******************
+#$********************

@@ -74,7 +74,7 @@ num = 20
 #  *****************
 # *******************
 # number of spaces = levels - k
- = 10 - 6 = 4
+#  = 10 - 6 = 4
 # 5 levels:
 #     *, k=0, 5 space, 1 asteriks
 #    *** , k=1, 4 space, 3 asteriks
@@ -95,25 +95,71 @@ num = 20
 
 # number of asteriks = 
 
-levels = 10
+# levels = 100
 
+# for k in range(levels):
+
+#   number_of_spaces = levels - k
+#   for s in range(number_of_spaces):
+#     print(" ", end="")
+
+#   number_of_asteriks = k * 2 + 1
+
+#   for j in range(number_of_asteriks):
+#     print("*", end= "")
+  
+#   print("")
+
+
+
+
+## New Problem:
+# Write a code that prints the following pattern which looks like a symmetric diamond:
+
+#          *
+#         ***
+#        *****
+#       *******
+#      *********
+#     ***********
+#    *************
+#   ***************
+#  *****************
+# ******************* levels: 10
+#  *****************  # k=0, 2 spaces: 17 asterisks
+#   ***************   # k=1, 3 spaces: 15 asterisks
+#    *************    # k=2, 4 spaces: 13 asterisks
+#     ***********     # k=3, 5 spaces: 11 asterisks
+#      *********      # k=4, 6 spaces: 9 asterisks
+#       *******       # k=5, 7 spaces: 7 asterisks
+#        *****        # k=6, 8 spaces: 5 asterisks
+#         ***         # k=7, 9 spaces: 3 asterisks
+#          *          # k=8, 10 spaces: 1 asterisks
+
+
+
+levels = 5
 for k in range(levels):
-
-  for s in range(levels - k):
+  number_of_spaces = levels - k
+  for s in range(number_of_spaces):
     print(" ", end="")
 
-  for j in range():
-    print("*", end= "")
-    
-dkd="
+  number_of_asterisks = k * 2 + 1
 
-#$$$$$$$$$$*
-#$$$$$$$$$***
-#$$$$$$$$*****
-#$$$$$$$*******
-#$$$$$$*********
-#$$$$$***********
-#$$$$*************
-#$$$***************
-#$$******************
-#$********************
+  for j in range(number_of_asterisks):
+    print("*", end= "")
+
+  print("")
+
+# the second triangle starts below:
+
+for k in range(levels - 1):
+  number_of_spaces2 = k + 2
+  for s in range(number_of_spaces2):
+    print(" ", end="")
+
+  number_of_asterisks2 = k//2 -1
+  for j in range(number_of_asterisks2):
+    print("*", end= "")
+
+  print("")

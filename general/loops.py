@@ -126,40 +126,99 @@ num = 20
 #   ***************
 #  *****************
 # ******************* levels: 10
-#  *****************  # k=0, 2 spaces: 17 asterisks
-#   ***************   # k=1, 3 spaces: 15 asterisks
-#    *************    # k=2, 4 spaces: 13 asterisks
-#     ***********     # k=3, 5 spaces: 11 asterisks
-#      *********      # k=4, 6 spaces: 9 asterisks
-#       *******       # k=5, 7 spaces: 7 asterisks
-#        *****        # k=6, 8 spaces: 5 asterisks
-#         ***         # k=7, 9 spaces: 3 asterisks
-#          *          # k=8, 10 spaces: 1 asterisks
+#  *****************  # k=0, : 17 asterisks     | 2 spaces
+#   ***************   # k=1, : 15 asterisks     | 3 spaces
+#    *************    # k=2, : 13 asterisks     | 4 spaces
+#     ***********     # k=3, : 11 asterisks     | 5 spaces
+#      *********      # k=4, : 9 asterisks      | 6 spaces
+#       *******       # k=5, : 7 asterisks      | 7 spaces
+#        *****        # k=6, : 5 asterisks      | 8 spaces
+#         ***         # k=7, : 3 asterisks      | 9 spaces
+#          *          # k=8, : 1 asterisks     | 10 spaces
+
+# we said before that the number of asteriks is equal to 2 * k + 1
+# first, when k is 0 : asteriks = 2 * levels - 3 - (2 * k)
+# second, when k is 1: asteriks = 2 * levels - 3 - (2 * k)
+# third, when k is 2 : asteriks = 2 * levels - 3 - (2 * k)
+
+# k + 3 = x
+# same as asteriks = k + 3
+# x = 10 - k
 
 
+# levels = 20
+# for k in range(levels):
+#   number_of_spaces = levels - k
+#   for s in range(number_of_spaces):
+#     print(" ", end="")
 
-levels = 5
-for k in range(levels):
-  number_of_spaces = levels - k
-  for s in range(number_of_spaces):
+#   number_of_asterisks = k * 2 + 1
+
+#   for j in range(number_of_asterisks):
+#     print("*", end= "")
+
+#   print("")
+
+# # the second triangle starts below:
+
+# for k in range(levels):
+#   number_of_spaces2 = k + 2
+#   for s in range(number_of_spaces2):
+#     print(" ", end="")
+
+#   number_of_asterisks2 = 2 * levels - 3 - (2 * k)
+#   for j in range(number_of_asterisks2):
+#     print("*", end= "")
+
+#   print("")
+
+
+# New problem: give two numbers, height an width, draw a parallelogram of asteriks of the given height and width
+# height = 5
+# width = 10
+
+# **********
+#  *        *
+#   *        *
+#    **********
+
+# h = 10
+# w = 20
+# ********************
+#  *                  * # i=0, 1 space
+#   *                  * # i=1, 2 spaces
+#    *                  * # i=2, 3 spaces
+#     *                  *
+#      *                  *
+#       *                  *
+#        *                  *
+#         *                  *
+#          ********************
+number_of_spaces = 0
+h = 100
+w = 200
+spaces_in_between = 0
+
+for k in range(w):
+    print("*", end="")
+print("")
+
+for i in range(h - 2):
+
+    # print the spaces first
+    number_of_spaces = i + 1
+    for s in range(number_of_spaces):
+        print(" ", end="")
+    print("*", end="")
+    spaces_in_between = w - 2
+    for n in range(spaces_in_between):
+        print(" ", end="")
+
+    print("*")
+
+for f in range(h - 1):
     print(" ", end="")
+for l in range(w):
+    print("*", end="")
+print("")   
 
-  number_of_asterisks = k * 2 + 1
-
-  for j in range(number_of_asterisks):
-    print("*", end= "")
-
-  print("")
-
-# the second triangle starts below:
-
-for k in range(levels - 1):
-  number_of_spaces2 = k + 2
-  for s in range(number_of_spaces2):
-    print(" ", end="")
-
-  number_of_asterisks2 = k//2 -1
-  for j in range(number_of_asterisks2):
-    print("*", end= "")
-
-  print("")

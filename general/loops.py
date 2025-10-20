@@ -184,16 +184,16 @@ num = 20
 
 # h = 10
 # w = 20
-# ********************
-#  *                  * # i=0, 1 space
-#   *                  * # i=1, 2 spaces
-#    *                  * # i=2, 3 spaces
-#     *                  *
+#  ********************
+#   *                  * # i=0, 1 space, (i + 1)
+#    *                  * # i=1, 2 spaces
+#     *                  * # i=2, 3 spaces
 #      *                  *
 #       *                  *
 #        *                  *
 #         *                  *
-#          ********************
+#          *                  *
+#           ********************
 number_of_spaces = 0
 h = 100
 w = 200
@@ -203,8 +203,13 @@ for k in range(w):
     print("*", end="")
 print("")
 
-for i in range(h - 2):
 
+# for i in range(n): [0, 1, 2, 3, ..., n-1], increases by 1 every time
+# for i in range(a,b):
+# for i in range(a,b,c):
+
+for i in range(h - 2): # [0, h - 3]
+    print(i) 
     # print the spaces first
     number_of_spaces = i + 1
     for s in range(number_of_spaces):
@@ -222,3 +227,8 @@ for l in range(w):
     print("*", end="")
 print("")   
 
+
+
+########################
+print("A", end="")
+print("B")

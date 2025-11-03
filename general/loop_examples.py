@@ -109,13 +109,37 @@
 
 # Arithmetic series, that initial = 3, base of 7, print all numbers in this series up to 61
 
-for k in range(3, 61, 7):
-    print(k)
+# for k in range(3, 61, 7):
+#     print(k)
 
 # complete the following series up to a 100
-# 1, 2, 4, 7, 11, 16, 22, 29, 37, ....
-k = 0
-h = k + 1
-while k < 100:
+# 1, 2, 4, 7, 11, 16, 22, 29, 37, ....,
+# k = 1
+# h = 1 # this is the number that you add to k each time
+# while k < 100:
+#     print(k)
+#     k = h + k
+#     h = h + 1
+
+# divide them into rounds
+# round 1: k=1,h=1    -> k = k + h = 1 + 1 = 2
+# round 2: k=2,h=2    -> k = k + h = 2 + 2 = 4
+# round 3: k=4,h=3    -> k = k + h = 4 + 3 = 7
+# round 4: k=7,h=4    -> k = k + h = 7 + 4 = 11
+
+
+# New similar exercise:
+# complete the following series up to 200
+# 1, 2, 4, 8, 16, 32, 64, .....
+
+k = 1
+h = 1
+while k < 200:
     print(k)
-    k = h + 1
+    k = h + k
+    h = h + 1
+
+# round1: k=1, h=1 -> k = k + h = 1 + 1 = 2
+# round2: k=2, h=2 -> k = k + h = 2 + 2 = 4
+# round3: k=4, h=4 -> k = k + h = 4 + 4 = 8
+# round4: k=8, h=8 -> k = k + h = 8 + 8 = 16

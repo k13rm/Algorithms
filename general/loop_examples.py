@@ -131,15 +131,59 @@
 # New similar exercise:
 # complete the following series up to 200
 # 1, 2, 4, 8, 16, 32, 64, .....
+"""
+x= 0
+while 2**x < 200:
+    print(2**x)
+    x+=1
+# let's say we have two variables, a,b:
+# we can write a to the power b in python as a**b
+"""
 
-k = 1
-h = 1
-while k < 200:
-    print(k)
-    k = h + k
-    h = h + 1
+# New similar exercise:
 
-# round1: k=1, h=1 -> k = k + h = 1 + 1 = 2
-# round2: k=2, h=2 -> k = k + h = 2 + 2 = 4
-# round3: k=4, h=4 -> k = k + h = 4 + 4 = 8
-# round4: k=8, h=8 -> k = k + h = 8 + 8 = 16
+# 5, 6, 4, 7, 3, 8, 2, 9, 1, 10, ...
+# i = 1
+# y = 5
+# while i < 20:
+#     print(y)
+#     y += i
+#     i+=1
+#     print(y)
+#     y -= i
+#     i+=1
+
+# another way:
+
+# i = 1
+# y = 5
+# while i < 20:
+#     print(y)
+#     if i % 2 == 0:
+#         y -= i
+#     else:
+#         y += i
+#     i += 1
+
+
+# count how many numbers between 1 and 100 that are divisible by 3.
+divisible = 0
+
+z = 1
+while z < 100:
+    if z % 3 == 0:
+        divisible += 1
+    z += 1
+print("From 1-100 there are", divisible, "numbers that can be divided by 3.")
+
+
+# ask the user for two numbers a and b, and then print the sum of all numbers between a and b (inclusive)
+
+a = int(input("Enter the first number: "))
+b = int(input("Enter the second number: "))
+x = 0
+while a <= b:
+    if x  != a + 1:
+        x + (a +1)
+    
+print(a+b)

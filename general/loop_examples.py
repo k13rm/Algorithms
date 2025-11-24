@@ -167,23 +167,71 @@ while 2**x < 200:
 
 
 # count how many numbers between 1 and 100 that are divisible by 3.
-divisible = 0
+# divisible = 0
 
-z = 1
-while z < 100:
-    if z % 3 == 0:
-        divisible += 1
-    z += 1
-print("From 1-100 there are", divisible, "numbers that can be divided by 3.")
+# z = 1
+# while z < 100:
+#     if z % 3 == 0:
+#         divisible += 1
+#     z += 1
+# print("From 1-100 there are", divisible, "numbers that can be divided by 3.")
 
+
+
+
+a = 64
+b = 90
+v = 15
+
+if a + v > b:
+    print("Person A has a greater loss of points than 15 compared to person B")
+if a + v < b:
+    print("Person A has a lesser loss of points than 15 compared to person B")    
+if a + v == b:
+    print("Person A has a loss of 15 points compared to person B")
+
+# you have two cups of water of different sizes
+# cup A can hold 2 liters of water
+# cup B can hold 5 liters of water
+# let's we want to bring a cup C, such that the amount of water in both cups A and C is equal to that of B.
+# what is the size of the cup C?
+# C = B - A
+# if we take B - A + 1, this is equal to the numbers of numbers between A and B
 
 # ask the user for two numbers a and b, and then print the sum of all numbers between a and b (inclusive)
 
-a = int(input("Enter the first number: "))
-b = int(input("Enter the second number: "))
-x = 0
-while a <= b:
-    if x  != a + 1:
-        x + (a +1)
+
+
+# a = int(input("Enter the first number: "))
+# b = int(input("Enter the second number: "))
+
+# x = 0
+
+# a = 2, b = 5
+# start with x = 2
+# if x != 5 -> if 2 != 5 -> x += 1 -> x = 2 + 1 = 3
+# if x != 5 -> if 3 != 5 -> x += 1 -> x = 3 + 1 = 4
+
+
+# how many numbers are between a and b ?
+
+
+# while a <= b:
+#     x += a
+#     a += 1
+#     print("Current a:", a, "Current x:", x)
     
-print(a+b)
+# print(x)
+
+
+# New Problem: 
+# ask the user for two numbers a and b, and the print the product of all the odd numbers between a and b (inclusive)
+# example, if a = 2, b = 5
+# the odd numbers between 2 and 5 are [3,5], their product is 15
+
+
+while a <= b:
+     x += a
+     a += 1
+     print("Current a:", a, "Current x:", x)
+    

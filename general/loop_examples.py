@@ -229,9 +229,41 @@ if a + v == b:
 # example, if a = 2, b = 5
 # the odd numbers between 2 and 5 are [3,5], their product is 15
 
+# a = int(input("Put the first number in: "))
+# b = int(input("Put the second number in: "))
+
+# x = 1
+
+# x = 3 * 5
+# 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ....
+#             b  a
+
+# while a <= b:
+#     if a % 2 == 1:
+#         x = a * x 
+#     a += 1
+
+    
+# print(x)
+    
+
+# New Problem: 
+# ask the user for 2 numbers, a and b, and then print the sum of every other number between a and b, starting from
+# example:
+# a = 2, b= 5
+# 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ...
+#    a        b
+# x = 2 + 4 = 6
+# a = 5, b = 12
+# x = 5 + 7 + 9 + 11 = 32
+
+
+x = 0
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
 
 while a <= b:
-     x += a
-     a += 1
-     print("Current a:", a, "Current x:", x)
-    
+    a += 2
+    x += a
+print(x)

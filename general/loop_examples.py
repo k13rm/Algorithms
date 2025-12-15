@@ -178,7 +178,7 @@ while 2**x < 200:
 
 
 
-
+"""
 a = 64
 b = 90
 v = 15
@@ -189,7 +189,7 @@ if a + v < b:
     print("Person A has a lesser loss of points than 15 compared to person B")    
 if a + v == b:
     print("Person A has a loss of 15 points compared to person B")
-
+"""
 # you have two cups of water of different sizes
 # cup A can hold 2 liters of water
 # cup B can hold 5 liters of water
@@ -236,7 +236,7 @@ if a + v == b:
 
 # x = 3 * 5
 # 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ....
-#             b  a
+#             b  
 
 # while a <= b:
 #     if a % 2 == 1:
@@ -258,12 +258,77 @@ if a + v == b:
 # x = 5 + 7 + 9 + 11 = 32
 
 
-x = 0
+# x = 0
 
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
+# a = int(input("Enter first number: "))
+# b = int(input("Enter second number: "))
 
-while a <= b:
-    a += 2
-    x += a
-print(x)
+# while a <= b:
+#     x += a # line q
+#     a += 2 # line p
+            
+# print(x)
+
+# at first,      x=0, a=2, b=5 up to line 265
+# round 1: at p: x=0, a=4, b=5
+# round 1: at q: x=4, a=4, b=5
+# round 2: at p: x=4, a=6, b=5
+# round 2: at q: x=10, a=6, b=5
+
+# New Problem:
+# ask the user for a single number n, and then print the factorial of n.
+# what is the factorial of n?
+# n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1
+# 3! = 3 * 2 * 1 = 6
+# 4! = 4 * 3 * 2 * 1 = 24
+# 5! = 5 * 4 * 3 * 2 * 1 = 120
+
+# n = int(input("Enter a number: "))
+
+# j = n
+
+# 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, ...
+# F, F  T  T  T  T  T  T  T  T   T 
+# F  F  t  t  t  t  t  t  t  t   t
+
+# j >= 2 is equivalent to j > 1
+
+# while j > 1:
+#     j -= 1
+#     n *= j
+
+# print(n)
+
+# New Problem:
+# Fibonacci Numbers
+# It is a sequence of numbers, where each numbers is the sum of the two pervious numbers.
+# The first two 1, 2,numbers in the sequence are always 0 and 1.
+# Fib: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+# idx: 0, 1, 2, 3, 4, 5, 6, 7,  8,  9,  10, 11, 12, .....
+#  
+# Problem statement: The user will give you a single number n, and you have to print the nth fibonacci number.
+# if n = 5, the output is 5
+# if n = 10, the output is 55
+# if n = 7, the output is 13.
+
+
+# 0, 1
+
+n = int(input("Enter a number:"))
+
+prev = 1
+before_prev = 0
+k = 0
+
+
+for n in range(n-1):
+ k += prev
+ k += before_prev
+ prev += 1
+ k += prev
+ k += before_prev
+ before_prev += 1
+ k += prev
+ k += before_prev
+
+print(k)

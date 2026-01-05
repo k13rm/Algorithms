@@ -301,7 +301,7 @@ if a + v == b:
 
 # New Problem:
 # Fibonacci Numbers
-# It is a sequence of numbers, where each numbers is the sum of the two pervious numbers.
+# It is a sequence of numbers, where each number is the sum of the two previous numbers.
 # The first two 1, 2,numbers in the sequence are always 0 and 1.
 # Fib: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
 # idx: 0, 1, 2, 3, 4, 5, 6, 7,  8,  9,  10, 11, 12, .....
@@ -310,25 +310,81 @@ if a + v == b:
 # if n = 5, the output is 5
 # if n = 10, the output is 55
 # if n = 7, the output is 13.
+# t=0
+# prev = 1
+# before_prev = 0
+# k = 1
+# # 0, 1
+
+# n = int(input("Enter a number:"))
+
+# for i in range(n-1):
+#     k = before_prev+prev
+#     before_prev = prev
+#     prev = k
+
+# 0   , 1  , 1  , 2  , 3  , 5  , 8
+#                bpr , pr , k=pr+bpr
+
+# for i in range(n-1):
+#     k +
+
+# a = 2
+# b = 5 # b = 2
+# c = 8 # c = 5
+
+# before we do anything we have
+# a=2,b=5,c=8
+
+# c = b
+# b = a
+
+# a = c, # a=8,b=5,c=8
+# b = a, # a=8,b=8,c=8
+# c = b, # a=8,b=8,c=8
+
+# move whatever is in a to b, and move whatever is in b to c
+
+# # swap and b
+# # b = 2, a = 5
+# t = a # put a on the table
+# a = b # copy b and paste it in a
+# b = t # b picks up old a from the table§
+# print(k)
 
 
-# 0, 1
+# New Problem:
+# ask the user for two numbers a and b, and then print the three numbers in the middle between a and b
+# example:
+# a = 1, b=7
+# 1, 2, 3, 4, 5, 6, 7
+# a = 2, b = 9
+# 2, 3, 4, 5, 6, 7, 8, 9
 
-n = int(input("Enter a number:"))
 
-prev = 1
-before_prev = 0
-k = 0
+a = int(input("First number:"))
+b = int(input("Second number:"))
 
 
-for n in range(n-1):
- k += prev
- k += before_prev
- prev += 1
- k += prev
- k += before_prev
- before_prev += 1
- k += prev
- k += before_prev
+c = 0
+midnum = 0
 
-print(k)
+
+distance_between_a_b = b - a
+
+half_distance_between_a_b = distance_between_a_b//2
+
+middle_number = a + half_distance_between_a_b
+middle_number = b - half_distance_between_a_b
+
+midnum = c + midnum_clas # b-a + (b-a)//2 = 3*(b-a)//2 # 1 + 1/2
+
+midnum1 = midnum + 1
+midnumminus1 = midnum - 1
+
+print(midnumminus1, midnum, midnum1)
+
+
+
+# -------- ---------------------------  ---------------------------
+# 1 2 3 4  5 6 7 8 9 10 11 12 13 14 15  16 17 18 19 20 21 22 23 24

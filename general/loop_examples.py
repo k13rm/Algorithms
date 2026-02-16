@@ -366,25 +366,36 @@ a = int(input("First number:"))
 b = int(input("Second number:"))
 
 
-c = 0
-midnum = 0
 
+# a = 2, b = 9
+# 2, 3, 4, 5, 6, 7, 8, 9
 
-distance_between_a_b = b - a
+distance_between_a_b = b - a # 7
 
-half_distance_between_a_b = distance_between_a_b//2
+half_distance_between_a_b = distance_between_a_b//2 # 3
 
-middle_number = a + half_distance_between_a_b
-middle_number = b - half_distance_between_a_b
+# +,-,*,/,//,%,**
+# Challenge: can you use these operations only to calculate the division with rounding up for two numbers a and b
 
-midnum = c + midnum_clas # b-a + (b-a)//2 = 3*(b-a)//2 # 1 + 1/2
+midnum = a + half_distance_between_a_b # 5
+# middle_number = b - half_distance_between_a_b # 6
+
 
 midnum1 = midnum + 1
 midnumminus1 = midnum - 1
 
 print(midnumminus1, midnum, midnum1)
 
-
-
 # -------- ---------------------------  ---------------------------
 # 1 2 3 4  5 6 7 8 9 10 11 12 13 14 15  16 17 18 19 20 21 22 23 24
+
+#midnum = c + midnum_clas # b-a + (b-a)//2 = 3*(b-a)//2 # 1 + 1/2
+
+# New Problem:
+# Given a sequence of numbers that are between a and b (you are given a and b as an input). Given also another variable x. Divide the sequence of numbers into groups, where each group has at most x numbers. Then print each group in a separate line, and next to it, print the sum of all of these numbers.
+
+# a=1, b=12, x=3
+# 1 2 3 : 6
+# 4 5 6 : 15
+# 7 8 9 : 24
+# 10 11 12 : 33

@@ -360,7 +360,7 @@ if a + v == b:
 # 1, 2, 3, 4, 5, 6, 7
 # a = 2, b = 9
 # 2, 3, 4, 5, 6, 7, 8, 9
-
+"""
 
 a = int(input("First number:"))
 b = int(input("Second number:"))
@@ -373,10 +373,17 @@ b = int(input("Second number:"))
 distance_between_a_b = b - a # 7
 
 half_distance_between_a_b = distance_between_a_b//2 # 3
-
+"""
 # +,-,*,/,//,%,**
 # Challenge: can you use these operations only to calculate the division with rounding up for two numbers a and b
+#complete, check in class
 
+if a%b != 0:
+    a//b+1
+else:
+    a//b
+
+"""
 midnum = a + half_distance_between_a_b # 5
 # middle_number = b - half_distance_between_a_b # 6
 
@@ -385,6 +392,7 @@ midnum1 = midnum + 1
 midnumminus1 = midnum - 1
 
 print(midnumminus1, midnum, midnum1)
+"""
 
 # -------- ---------------------------  ---------------------------
 # 1 2 3 4  5 6 7 8 9 10 11 12 13 14 15  16 17 18 19 20 21 22 23 24
@@ -399,3 +407,9 @@ print(midnumminus1, midnum, midnum1)
 # 4 5 6 : 15
 # 7 8 9 : 24
 # 10 11 12 : 33
+
+
+a = int(input( "select a: "))
+b = int(input( "select b: "))
+x = 3
+

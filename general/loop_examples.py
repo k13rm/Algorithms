@@ -377,11 +377,20 @@ half_distance_between_a_b = distance_between_a_b//2 # 3
 # +,-,*,/,//,%,**
 # Challenge: can you use these operations only to calculate the division with rounding up for two numbers a and b
 #complete, check in class
+"""
+a = 5 
+b = 2
 
 if a%b != 0:
-    a//b+1
+    answer = a//b+1
 else:
-    a//b
+    answer = a//b
+
+# another way in a single line without an If statement:
+answer = (a + b - 1) // b
+"""
+# (a + b - 1) // b = (a / b) + ((b - 1) / b) 
+
 
 """
 midnum = a + half_distance_between_a_b # 5
@@ -399,8 +408,20 @@ print(midnumminus1, midnum, midnum1)
 
 #midnum = c + midnum_clas # b-a + (b-a)//2 = 3*(b-a)//2 # 1 + 1/2
 
+
+# Reminder about for loops, there are three types of for loops:
+# 1) for i in range(n): [0, 1, 2, ..., n-1]
+# 2) for i in range(a,b): [a, a+1, a+2, ..., b-1]
+# 3) for i in range(a,b,c): [a, a+c, a+c+c, ..., b-1]
+# example: for i in range(2, 10, 3): [2, 5, 8]
+# example: for i in range(3, 20, 4): [3, 7, 11, 15, 19]
+# example: for i in range(2, 10): [2, 3, 4, 5, 6, 7, 8, 9]
+
 # New Problem:
-# Given a sequence of numbers that are between a and b (you are given a and b as an input). Given also another variable x. Divide the sequence of numbers into groups, where each group has at most x numbers. Then print each group in a separate line, and next to it, print the sum of all of these numbers.
+# Given a sequence of numbers that are between a and b (you are given a and b as an input).
+#Given also another variable x. Divide the sequence of numbers into groups,
+#where each group has at most x numbers. Then print each group in a separate line,
+#and next to it, print the sum of all of these numbers.
 
 # a=1, b=12, x=3
 # 1 2 3 : 6
@@ -408,8 +429,25 @@ print(midnumminus1, midnum, midnum1)
 # 7 8 9 : 24
 # 10 11 12 : 33
 
+# another example:
+# a=2, b=10, x=4 : [2,3,4,5 | 6,7,8,9 | 10]
+# 2 3 4 5 : 14
+# 6 7 8 9 : 30
+# 10 : 10
 
-a = int(input( "select a: "))
-b = int(input( "select b: "))
-x = 3
+
+a = int(input( "select range start: "))
+b = int(input( "select range end: "))
+x = int(input("select the number variables in a group:"))
+
+rows = b//x
+for k in range(a,a+x):
+    print(k, end=" ")
+
+# rows*for k in range(a,b,x):
+
+
+# for j in range(20):
+#     for i in range(10):
+#         pass # do sth
 

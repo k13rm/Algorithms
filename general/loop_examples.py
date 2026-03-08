@@ -419,9 +419,9 @@ print(midnumminus1, midnum, midnum1)
 
 # New Problem:
 # Given a sequence of numbers that are between a and b (you are given a and b as an input).
-#Given also another variable x. Divide the sequence of numbers into groups,
-#where each group has at most x numbers. Then print each group in a separate line,
-#and next to it, print the sum of all of these numbers.
+# Given also another variable x. Divide the sequence of numbers into groups,
+# where each group has at most x numbers. Then print each group in a separate line,
+# and next to it, print the sum of all of these numbers.
 
 # a=1, b=12, x=3
 # 1 2 3 : 6
@@ -440,9 +440,37 @@ a = int(input( "select range start: "))
 b = int(input( "select range end: "))
 x = int(input("select the number variables in a group:"))
 
-rows = b//x
-for k in range(a,a+x):
+# [2, 3, 4 | 5, 6, 7 | 8, 9, 10 | 11, 12]
+# x = 3
+# sum_of_group = 2 + 3 + 4 = 9
+
+
+# 1st group: a             ->  a + x
+# 2nd group: a + x         ->  a + 2 * x
+# 3rd group: a + 2 * x     ->  a + 3 * x
+# 4th group: a + 3 * x     ->  a + 4 * x
+# --------------------------------------
+# nth group: a + (n-1) * x ->  a + n * x
+# n = 12312321
+# for k in range(a + n*x, a + n * x)
+
+# 8 slices of pizza, each person will take 2 slices -> 4
+#                  ,  each group will have x people ->
+# if I have (a: beginning, b: end), how can I compute how many numbers there are in total
+# a = 10, b = 20 -> 11
+# a = 2, b = 5 -> 4
+# a = 8, b = 24 -> 17
+total_number = b - a + 1 # distance
+number_of_groups = total_number // x
+
+sum_of_group = 0
+n = 2
+for k in range(a+(n-1)*x,a+n*x): # (a->a+x) = (2->5) = [2, 3, 4]
     print(k, end=" ")
+    sum_of_group += k
+
+
+print(sum_of_group)
 
 # rows*for k in range(a,b,x):
 

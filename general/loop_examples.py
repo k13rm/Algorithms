@@ -444,31 +444,47 @@ x = int(input("select the number variables in a group:"))
 # x = 3
 # sum_of_group = 2 + 3 + 4 = 9
 
-
-# 1st group: a             ->  a + x
-# 2nd group: a + x         ->  a + 2 * x
-# 3rd group: a + 2 * x     ->  a + 3 * x
-# 4th group: a + 3 * x     ->  a + 4 * x
+# for i in range(a,a+x)
+# (n=1) 1st group: a             ->  a + x      : [a,a+1,a+2,...,a+x-1]
+# (n=2) 2nd group: a + x         ->  a + 2 * x  : [a+x, a+x+1, a+x+2, ..., a+2*x-1]
+# (n=3) 3rd group: a + 2 * x     ->  a + 3 * x
+# (n=4) 4th group: a + 3 * x     ->  a + 4 * x
+# (n=1000) 1000th group: a + 999 * x -> a + 1000 * x
 # --------------------------------------
 # nth group: a + (n-1) * x ->  a + n * x
 # n = 12312321
 # for k in range(a + n*x, a + n * x)
 
+# a -> a + x
+# a + x -> a + x + x = a + 2 * x
+# a + x + x -> a + x + x + x = a + 3 * x
+
 # 8 slices of pizza, each person will take 2 slices -> 4
 #                  ,  each group will have x people ->
 # if I have (a: beginning, b: end), how can I compute how many numbers there are in total
-# a = 10, b = 20 -> 11
+# a = 10, b = 20 -> 11, b - a = 10 + 1 = 11
 # a = 2, b = 5 -> 4
 # a = 8, b = 24 -> 17
 total_number = b - a + 1 # distance
 number_of_groups = total_number // x
 
 sum_of_group = 0
-n = 2
-for k in range(a+(n-1)*x,a+n*x): # (a->a+x) = (2->5) = [2, 3, 4]
-    print(k, end=" ")
-    sum_of_group += k
 
+for n in range(1, number_of_groups + 1):
+    for k in range(a+(n-1)*x,a+n*x): # (a->a+x) = (2->5) = [2, 3, 4]
+        print(k, end=" ")
+        sum_of_group += k
+    print("")
+
+# a=2, b=20, x=3
+# ---------------
+# 2, 3, 4 : 9
+# 5, 6, 7 : 18
+# 8, 9, 10 : 27
+# 11, 12, 13 : 36
+# 14, 15, 16 : 45
+# 17, 18, 19 : 54
+# 20 : 20
 
 print(sum_of_group)
 

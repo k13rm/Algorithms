@@ -468,13 +468,31 @@ x = int(input("select the number variables in a group:"))
 total_number = b - a + 1 # distance
 number_of_groups = total_number // x
 
-sum_of_group = 0
 
+# 2 3 4 : 9
+# number_groups + 1 -1 = number_groups
 for n in range(1, number_of_groups + 1):
+    sum_of_group = 0
     for k in range(a+(n-1)*x,a+n*x): # (a->a+x) = (2->5) = [2, 3, 4]
+        print(k, end=" ") # this is the same as saying print(k, end="\n")
+        sum_of_group += k
+    print(":", sum_of_group)
+
+# hint the beginning of the final group depends on a,x,number_of_groups
+if total_number % x != 0:
+    # this means that there is an extra group that has less than x numbers, we need to print it as well
+    sum_of_group = 0
+    for k in range(a + number_of_groups*x, b+1):
         print(k, end=" ")
         sum_of_group += k
-    print("")
+    print(":", sum_of_group)
+
+# for the input a=2, b=10, x=3, there was no issue
+# for the input a=2, b=20, x=3, there is an issue, 20 will remain as an extra
+
+# the outer for loop is responsible for shifting the window towards the right, or moving between groups.
+# 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+#                   --------
 
 # a=2, b=20, x=3
 # ---------------
@@ -485,8 +503,6 @@ for n in range(1, number_of_groups + 1):
 # 14, 15, 16 : 45
 # 17, 18, 19 : 54
 # 20 : 20
-
-print(sum_of_group)
 
 # rows*for k in range(a,b,x):
 

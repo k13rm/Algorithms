@@ -52,19 +52,82 @@ print("The smallest even number in the provided list is:\n", smallest_even_numbe
 # 2 is duplicated 1 times
 # 6 is duplicated 1 times
 
-lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5] # [1, 10000000]
-x = max(lst) + 1
-counter = [0] * x
+# lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5] # [1, 10000000]
+# x = max(lst) + 1
+# counter = [0] * x counter[3] = counter[3] + 1
 
 # [0, 2, 0, 1, 1, 0, 0, 0, 0, 0]
 #  0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 # dummy_lst = []
 # dummy_lst[5] = dummy_lst[5] + 1
 
-for k in lst:
-    counter[k] = counter[k] + 1
+# for k in lst:
+#     counter[k] = counter[k] + 1
 
-for i in range(x):
-    if counter[i] > 0:
-        print(i, "is duplicated", counter[i], "times")
-    
+# for i in range(x):
+#     if counter[i] > 0:
+#         print(i, "is duplicated", counter[i], "times")
+
+
+# Problem 5: Given a list of numbers, find the second largest and second smallest numbers in the list and print both of them.
+
+# lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+# l1:  3  3  4  4  5, 9, 9, 9, 9, 9, 9
+# l2:  0  1  3  3  4, 5, 5, 6, 6, 6, 6
+
+# if the new number is larger than l1, then l2 becomes l1 and l1 becomes the new number
+# if the new number is smaller than l1 but larger than l2, then l2 becomes the new number
+# otherwise, we do nothing
+
+# l1 = 0
+# l2 = 0
+# s1 = 9999999
+# s2 = 9999999
+
+# largest = 0
+# second_largest = 0
+
+# for k in range(len(lst)): k: [0,1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# for k in lst: k: [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+# for k in lst:
+#     if k > l1:
+#         l2 = l1
+#         l1 = k
+#     elif k < l1 and k > l2:
+#         l2 = k
+#     if k < s1:
+#         s2 = s1
+#         s1 = k
+#     elif k > s1 and k < s2:
+#         s2 = k
+# print("The largest number in the list is:\n", l1, "\nThe second largest number in the list is:\n", l2)    
+
+# print("The smallest number in this list is:\n", s1, "\nThe second smallest number in this list is:\n", s2)        
+
+# print("\n\nThe second largest number is:\n", l2, "\nThe second smallest number is:\n", s2)
+
+
+# Problem 6 (slightly harder): Given a list of numbers, find the unique numbers in the list and print their count. For example if the list is [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5], then the output should be:
+# There are 7 unique numbers in the list, which are 1, 2, 3, 4, 5, 6, 9
+
+# lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+
+# duplicates = 0
+# x = max(lst) + 1
+# counter = [0] * x
+# for k in lst:
+#     counter[k] = counter[k] + 1
+
+# unique_numbers = []
+# for i in range(x):
+#      if counter[i] > 0:
+#           unique_numbers.append(i)
+        
+# print("There are", len(unique_numbers), "unique numbers in the list, which would be", unique_numbers)
+
+
+# Problem 7: (even harder) Given a list of numbers, and a target number k, find if it is possible to choose two numbers from the list, such that their sum is equal to k. For example, if the list is [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5] and k = 8, then the output should be True, because we can choose 3 and 5 from the list, and their sum is 8. If k = 20, then the output should be False, because there are no two numbers in the list that can sum up to 20.
+
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+k = 8

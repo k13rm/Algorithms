@@ -131,3 +131,11 @@ print("The smallest even number in the provided list is:\n", smallest_even_numbe
 
 lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
 k = 8
+
+for i in range(len(lst)):
+    for j in range(i + 1, len(lst)):
+        if lst[i] + lst[j] == k:
+            print("True")
+            break
+        else:
+            print("False")

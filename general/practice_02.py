@@ -129,13 +129,45 @@ print("The smallest even number in the provided list is:\n", smallest_even_numbe
 
 # Problem 7: (even harder) Given a list of numbers, and a target number k, find if it is possible to choose two numbers from the list, such that their sum is equal to k. For example, if the list is [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5] and k = 8, then the output should be True, because we can choose 3 and 5 from the list, and their sum is 8. If k = 20, then the output should be False, because there are no two numbers in the list that can sum up to 20.
 
-lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
-k = 8
+# lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+# # #         i  j                                                                               
+# k = 14 
+# pair = 0 # flag variable technique
 
-for i in range(len(lst)):
-    for j in range(i + 1, len(lst)):
-        if lst[i] + lst[j] == k:
-            print("True")
-            break
-        else:
-            print("False")
+# # nested for loops technique
+# for i in range(len(lst)): # [0 -> len(lst) - 1]
+#     for j in range(i + 1, len(lst)): # [i + 1 -> len(lst) - 1]
+#         if lst[i] + lst[j] == k:
+#             pair = 1
+#             break
+            
+# if pair == 1:
+#     print("True")
+# else:
+#     print("False")
+
+# given a list, print all pairs of numbers in the list, where each pair is printed on a separate line.
+
+# for i in range(len(lst)):
+#     for j in range(i + 1, len(lst)):
+#         print(lst[i], lst[j])
+
+# Problem 8: (that uses the similar concepts to problem 7) Given a list of numbers, and a target number k, 
+# find if it is possible to choose three numbers from the list, such that their sum 
+# is equal to k. For example, if the list is [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5] and k = 12, then the output 
+# should be True, because we can choose 3, 4, and 5 from the list, and their sum is 12. If 
+# k = 30, then the output should be False, because there are no three numbers in the list that can sum up up to 30.
+
+lst = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+n = 30
+sumofthree = 0
+for k in range(len(lst)):
+    for l in range(k+1, len(lst)):
+        for m in range(l+1, len(lst)):
+            if lst[k] + lst[l] + lst[m] == n:
+                sumofthree = 1
+                
+if sumofthree == 1:
+    print("True")
+else:
+    print("False")

@@ -17,7 +17,7 @@
 # Hash Table: sha256("password122") = 0x3bc51062973c458d5ddf4e5b9c1f0a2f
 
 # A dictionary is a data structure that stores key-value pairs. It allows us to retrieve the value associated with a key in a very efficient way.
-"""
+
 d = {} # curly brackets are used to create an empty dictionary
 d["Alice"] = 25 # Alice is called the key, and 25 is called the value. We can use any data type for the key.
 d["Alice"] = 30 # this would overwrite the previous value
@@ -81,7 +81,7 @@ print("Printing Values only:")
 for value in surnames.values():
      print(value)
 
-"""
+
 # Now, let's see how to solve some problems with dictionaries.
 
 # Problem 1: (easy) Given a list of student names, and a list of numbers in two separate lists,

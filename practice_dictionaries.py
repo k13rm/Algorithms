@@ -59,6 +59,7 @@ for name, color in fruits.items():
 """
 
 # Problem 8: Count how many fruits in the dictionary have the color red.
+"""
 count = 0
 
 
@@ -68,4 +69,16 @@ for name, color in fruits.items():
         
 print(count)
 
+"""
+
 # Probkem 9: Count how many fruits in the dictionary contain the letter "a" in their name.
+
+count = 0
+
+for name in fruits.keys():
+    if "a" in name:
+        count += 1
+
+print(count)
+
+# HW complete

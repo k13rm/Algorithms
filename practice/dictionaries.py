@@ -131,5 +131,15 @@ for key, value in numbers.items():
 print(max_values_key)
 
 
-# Problem 13 (level 2) [Homework] Given the same dictionary above, find the key  whose list has the largest sum of numbers. For example, in the dictionary above, they key "c" has the largest sum, so you should just pinrt c
+# Problem 13 (level 2) [Homework] Given the same dictionary above, find the key whose list has the largest 
+# sum of numbers. For example, in the dictionary above, they key "c" has the largest sum, so you should just print c
 
+maxsum = 0
+max_sumkey = 0
+
+for key, value in numbers.items():
+    if sum(value) > maxsum:
+        maxsum = sum(value)
+        max_sumkey = key
+
+print(max_sumkey)  

@@ -120,26 +120,85 @@ numbers = {
     "d": [1, 1, 1, 1, 1, 1]
 }
 
-max_value = 0
-max_values_key = 0
+# max_value = 0
+# max_values_key = 0
 
-for key, value in numbers.items():
-    if len(value) > max_value:
-        max_value = len(value)
-        max_values_key = key
+# for key, value in numbers.items():
+#     if len(value) > max_value:
+#         max_value = len(value)
+#         max_values_key = key
 
-print(max_values_key)
+# print(max_values_key)
 
 
 # Problem 13 (level 2) [Homework] Given the same dictionary above, find the key whose list has the largest 
 # sum of numbers. For example, in the dictionary above, they key "c" has the largest sum, so you should just print c
 
-maxsum = 0
-max_sumkey = 0
+# maxsum = 0
+# max_sumkey = 0
 
-for key, value in numbers.items():
-    if sum(value) > maxsum:
-        maxsum = sum(value)
-        max_sumkey = key
+# for key, value in numbers.items():
+#     if sum(value) > maxsum:
+#         maxsum = sum(value)
+#         max_sumkey = key
 
-print(max_sumkey)  
+# print(max_sumkey) 
+# 
+
+
+# Problem 14 (level 2) Given the same dictionary above, for each list in the dictionary, find the average of the 
+# numbers in that list, and create a new dictionary with the same keys, but the values are the averages of the lists.
+# Your output should be a new dictionary that looks like this: {"a": 2.0, "b": 2.666, "c": 4.0, "d": 1.0} 
+# sumofvalues = 0
+# average = 0
+# average_values = {}
+
+
+
+# for key, value in numbers.items():
+#   sumofvalues = sum(value)
+#   average = sumofvalues / len(value)
+#   average_values[key] = average
+
+# print(average_values)
+
+# Problem 15 (level 3) Given the list below, create a dictionary that has a count of how many times each string appears in the list:
+
+lst = ["ada", "bob", "lolo", "ada", "sana", "sana", "sana", "emilio", "bob", "sana", "lolo", "amit", "enas"]
+namecount = {}
+count = 0
+
+for name in lst:
+    if name not in namecount:
+        namecount[name] = 1
+    else:
+        namecount[name] += 1
+        
+
+
+print(namecount)
+
+"""
+
+
+    for name in lst:
+        if name == "ada":
+            count += 1
+
+    print(count)
+
+
+    names = {
+        "ada": "S",
+        "bob": "A",
+        "lolo": "B",
+    }
+
+    if "ada" in names:
+        print("Exists")
+    else:
+        print("Does not exist")
+"""
+
+# Problem 16 (level 3) Given the same list above, create a dictionary that counts how many times each letter appears among all the names in the list. For example, if the letter a appears 10 times, and the letter b appears 5 times, your output should be a dictionary that looks like this: {"a": 10, "b": 5, ...}
+

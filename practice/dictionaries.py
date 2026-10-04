@@ -164,19 +164,19 @@ numbers = {
 
 # Problem 15 (level 3) Given the list below, create a dictionary that has a count of how many times each string appears in the list:
 
-lst = ["ada", "bob", "lolo", "ada", "sana", "sana", "sana", "emilio", "bob", "sana", "lolo", "amit", "enas"]
-namecount = {}
-count = 0
+# lst = ["ada", "bob", "lolo", "ada", "sana", "sana", "sana", "emilio", "bob", "sana", "lolo", "amit", "enas"]
+# namecount = {}
+# count = 0
 
-for name in lst:
-    if name not in namecount:
-        namecount[name] = 1
-    else:
-        namecount[name] += 1
+# for name in lst:
+#     if name not in namecount:
+#         namecount[name] = 1
+#     else:
+#         namecount[name] += 1
         
 
 
-print(namecount)
+# print(namecount)
 
 """
 
@@ -200,5 +200,119 @@ print(namecount)
         print("Does not exist")
 """
 
-# Problem 16 (level 3) Given the same list above, create a dictionary that counts how many times each letter appears among all the names in the list. For example, if the letter a appears 10 times, and the letter b appears 5 times, your output should be a dictionary that looks like this: {"a": 10, "b": 5, ...}
+# Problem 16 (level 3) Given the same list above, create a dictionary that counts how many times 
+# each letter appears among all the names in the list. For example, if the letter a appears 10 times,
+#  and the letter b appears 5 times, your output should be a dictionary that looks like this: {"a": 10, "b": 5, ...}
 
+# Reminder Note: a string in python is simply a *list* of characters
+# lst = ["ada", "bob"]
+# for name in lst:
+#    2st iteration: (name = "bob")
+#    for letter in name:
+#        3nd iteration (letter = 'b')
+
+# letter_count = {}
+
+# for name in lst:
+#     for letter in name:
+#         if letter not in letter_count:
+#             letter_count[letter] = 1
+#         else:
+#             letter_count[letter] += 1
+
+# print(letter_count)
+
+
+# Problem 17: (level 3) Given the list below, create a dictionary that
+#  groups each name by the first character of the name. For example, For a list like 
+# ["ada", "bob", "anya", "bart"], the dictionary should look like this: {"a": ["ada", "anya"], "b", ["bob", "bart"]}
+
+lst = ["ada", "bob", "anya", "bart", "sara", "sana", "sam", "natalya", "john", "james", "javier"]
+
+# {"a": ["ada", "anya"], "b": ["bob", "bart"], "s": ["sara", "sana", "sam"], "n":["natalya"]}
+
+# first_letter = {}
+
+# for name in lst:
+#     letter = name[0:]
+#     if letter not in first_letter:
+#         first_letter[letter] = [name]
+#     else:
+#         first_letter[letter].append(name)
+
+# print(first_letter)
+
+
+# Problem 18: (level 3) Given the same list above, create a dictionary that groups each name by the length of the name. 
+# For example, for a list like ["ada", "bob", "anya", "bart"], the dictionary should look like this:
+#  {3: ["ada", "bob"], 4: ["anya", "bart"]}
+
+# len_names = {}
+
+
+
+# for name in lst:
+#     length = len(name)
+#     if length not in len_names:
+#         len_names[length] = [name]
+#     else:
+#         len_names[length].append(name)
+
+# print(len_names)
+
+# Problem 19: (level 4) Given below are two dictionaries, one with several supermarket products and their prices, and the other with 
+# several products and their quantities. The first dictionary represents the price list in the store. And the second one represents 
+# your shopping basket. The goal is to calculate the total cost of your shopping basket. For example, the price of the basket below is 
+# 12 dollars. Write a program that calculates the total cost of any basket or any shopping price.
+
+prices = {
+    "apple": 2,
+    "banana": 1,
+    "orange": 3,
+    "milk": 4
+}
+
+inventory = {
+    "apple": 10,
+    "orange": 5,
+    "banana": 5,
+    "milk": 2
+}
+
+# a = "apple"
+# b = "banana"
+# print (prices[a] + prices[b])
+
+basket = {
+    "apple": 3,
+    "orange": 2,
+    "banana": 10,
+    "milk": 5,
+    "chocolate": 1
+}
+
+total_cost = 0
+for product in basket.keys(): # product in ["apple", "orange"]
+    price = prices[product]
+    quantity = basket[product]
+    cost = price * quantity
+    
+    if inventory[product] < quantity:
+        print(f"item {product} is not in stock")
+        total_cost += inventory[product] * price
+    else:
+        total_cost += cost
+
+print(total_cost)
+
+
+# A different way to do the same thing is below.
+# total_cost = 0
+# for product in basket.keys(): # product in ["apple", "orange"]
+#     price = prices[product]
+#     quantity = min(basket[product], inventory[product])
+#     cost = price * quantity
+#     total_cost += cost
+
+
+# Problem 20: (Homework). Given the same dictionaries and store as above. Modify the code such that it can detect if there is something in the basket that is not in the store.

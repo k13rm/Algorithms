@@ -315,4 +315,9 @@ print(total_cost)
 #     total_cost += cost
 
 
-# Problem 20: (Homework). Given the same dictionaries and store as above. Modify the code such that it can detect if there is something in the basket that is not in the store.
+# Problem 20: (Homework). Given the same dictionaries and store as above. Modify the code such that it can detect 
+# if there is something in the basket that is not in the store.
+
+for product in basket.keys():
+    if product not in prices:
+        print(f"item {product} is not in the store")

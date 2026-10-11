@@ -265,45 +265,49 @@ lst = ["ada", "bob", "anya", "bart", "sara", "sana", "sam", "natalya", "john", "
 # your shopping basket. The goal is to calculate the total cost of your shopping basket. For example, the price of the basket below is 
 # 12 dollars. Write a program that calculates the total cost of any basket or any shopping price.
 
-prices = {
-    "apple": 2,
-    "banana": 1,
-    "orange": 3,
-    "milk": 4
-}
+# prices = {
+#     "apple": 2,
+#     "banana": 1,
+#     "orange": 3,
+#     "milk": 4
+# }
 
-inventory = {
-    "apple": 10,
-    "orange": 5,
-    "banana": 5,
-    "milk": 2
-}
+# inventory = {
+#     "apple": 10,
+#     "orange": 5,
+#     "banana": 5,
+#     "milk": 2
+# }
 
 # a = "apple"
 # b = "banana"
 # print (prices[a] + prices[b])
 
-basket = {
-    "apple": 3,
-    "orange": 2,
-    "banana": 10,
-    "milk": 5,
-    "chocolate": 1
-}
+# basket = {
+#     "apple": 3,
+#     "orange": 2,
+#     "banana": 10,
+#     "milk": 5,
+#     "chocolate": 1
+# }
 
-total_cost = 0
-for product in basket.keys(): # product in ["apple", "orange"]
-    price = prices[product]
-    quantity = basket[product]
-    cost = price * quantity
+# total_cost = 0
+# for product in basket.keys(): # product in ["apple", "orange"]
+#     if product not in prices:
+#         print(f"item {product} is not in the store")
+#         continue
+#     price = prices[product]
+#     quantity = basket[product]
+#     cost = price * quantity
     
-    if inventory[product] < quantity:
-        print(f"item {product} is not in stock")
-        total_cost += inventory[product] * price
-    else:
-        total_cost += cost
+#     if inventory[product] < quantity:
+#         print(f"item {product} is not in stock")
+#         total_cost += inventory[product] * price
+#     if inventory[product] >= quantity:
+#         total_cost += cost
 
-print(total_cost)
+
+# print(total_cost)
 
 
 # A different way to do the same thing is below.
@@ -318,6 +322,77 @@ print(total_cost)
 # Problem 20: (Homework). Given the same dictionaries and store as above. Modify the code such that it can detect 
 # if there is something in the basket that is not in the store.
 
-for product in basket.keys():
-    if product not in prices:
-        print(f"item {product} is not in the store")
+#for product in basket.keys():
+    
+
+# Problem 21: Tim has two old phonebooks. Tim wants to combine them into a single phonebook. However, some of the 
+# contacts are repeated in both phonebooks. If a contact is repeated, Tim wants to record the conflicts in a new dictionary called 
+# "conflicts". Your task is to create both the new phonebook and the conflicts dictionary. For the example below, the outputs should be:
+# new_phonebook = {"Andrew": 333, "Carla": 777, "Kevin": 444, "Mary": 666}"
+# conflicts = {"John": [111, 555], "Jane": [222, 888]}
+
+# phonebook_a = {
+#     "John": 111,
+#     "Jane": 222,
+#     "Andrew": 333,
+#     "Kevin": 444,
+# }
+
+# phonebook_b = {
+#     "John": 555,
+#     "Mary": 666,
+#     "Carla": 777,
+#     "Jane": 888,
+# }
+
+
+# conflicts = {}
+# new_phonebook = {}
+
+# # new_phonebook[key] = value 
+# # print(new_phonebook[key]) -> value
+
+# for name in phonebook_a.keys():
+#     if name in phonebook_b:
+#         conflicts[name] = [phonebook_a[name], phonebook_b[name]]
+#     else:
+#         new_phonebook[name] = phonebook_a[name]
+# for name in phonebook_b.keys():
+#     if name not in phonebook_a:
+#         new_phonebook[name] = phonebook_b[name]
+
+# print(new_phonebook)
+
+### Anagrams:
+## We say two words are anagrams if they contain the same letters, but in a different order. For example, 
+# "listen" and "silent" are anagrams.
+# Given two words, check if they are anagrams or not.
+
+# Reminder: a string is a list of characters
+# word_1 = ["l", "i", "s", "t", "e", "n"]
+
+word_1 = "appale"
+word_2 = "appeal"
+lettercount_1 = {}
+lettercount_2 = {}
+
+for k in word_1:
+    if k not in lettercount_1:
+        lettercount_1[k] = 1
+    else:
+        lettercount_1[k] += 1
+
+for k in word_2:
+    if k not in lettercount_2:
+        lettercount_2[k] = 1
+    else:
+        lettercount_2[k] += 1
+
+
+if lettercount_1 == lettercount_2:
+    print("anagram")
+else:
+    print("not anagram")
+
+# aaat
+# attt

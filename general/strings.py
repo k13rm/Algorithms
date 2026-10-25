@@ -60,7 +60,10 @@ for i in range(len(word)): # [0 -> len(word) - 1]
 # "racecars" -> e
 # {'r': 2, 'a': 2, 'c': 2, 'e': 1, 's': 1}
 
-word = "aabbcc"
+# local decision: canceling the trip is a local decision
+# global decision: keeping the trip:
+
+word = "aabbc"
 lettercount = {}
 
 for ch in word:
@@ -69,8 +72,15 @@ for ch in word:
     else:
         lettercount[ch] += 1
 
+# Flag variable 
+flag = False
 for ch in word:
     if lettercount[ch] == 1:
         print(ch)
+        flag = True
         break
+
+if flag == False:
+    print("None")
+
     
